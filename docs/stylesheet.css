@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&family=Mogra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Knewave&family=Mogra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Cherry+Bomb+One&family=Knewave&family=Mogra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+/* ! Colors Styles
+    #A59D84
+    #AEA58B
+    #C1BAA1
+    #c8c3ad
+    #D7D3BF
+    #D0CBB6
+
+    rgba(160, 94, 52, 0.3)
+
+    color: #A05E34;
+    text-shadow: 3.5px 3.5px #5e3518; 
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #744426;
+*/
+
+/*#region Selectores de elementos HTML */
+
+ #fondo-fijo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('./assets/background.png') center/cover no-repeat;
+    z-index: -10;
+} 
+
+h2 {
+    text-align: center;
+    margin: 20px 10px 15px 10px;
+    font-family: "Cherry Bomb One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 150px;
+    color: rgb(177, 110, 69);
+    text-shadow: 8px 5px #5e3518; 
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #744426;     
+}
+
+h3 {
+    text-align: center;
+    margin: 10px 20px 25px 0px;
+    font-family: "Atma", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 50px;
+    color: rgb(187, 110, 63);
+    text-shadow: 3.5px 3.5px #5e3518; 
+    -webkit-text-stroke-width: 1.8px;
+    -webkit-text-stroke-color: #744426;
+}
+
+p {
+    margin: 0px 0px 15px 0px;
+    font-family: "Chewy", system-ui;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 28px;
+    color: rgb(187, 110, 63);
+    text-shadow: -2px 2px 2px #5e3518;
+    -webkit-text-stroke-width: .1px;
+    -webkit-text-stroke-color: #744426;
+}
+
+::-webkit-scrollbar {
+    width: 18px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #744426;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(180, 105, 58, .45);
+    box-shadow: inset 0 0px 0px 20px rgba(180, 105, 58, .8);
+    border-radius: 100px;
+}
+
+/*#endregion */
+
+/*#region Seccion principal */
+#main_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    #main_title {
+        text-align: center;
+        margin: 20px 10px 60px 10px;
+        font-family: "Cherry Bomb One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 150px;
+        color: rgb(177, 110, 69);
+        text-shadow: 8px 5px #5e3518; 
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #744426;
+    }
+
+    .main-targets {
+        display: flex;
+        gap: 110px;
+    }
+
+    .main-buttons-tg { 
+        display: none;
+        width: 0;
+        height: 0;
+    }
+/* 
+    .main-targets-labels {
+        height: 470px;
+        width: 420px;
+        background-color: #a05e34;
+        border: 0px;
+        border-radius: 20px;
+        box-shadow: 7px 4px 5px 2px #89512d;
+        transition: all 0.25s ease-in-out;
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+    } */
+
+    .main-targets-labels  {
+        height: 470px;
+        width: 420px;
+        border-radius: 20px;
+        transition: all 0.25s ease-in-out;
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+        background: rgba(180, 105, 58, .55);
+        backdrop-filter: blur(6px);
+        box-shadow: 3px 2px 5px 2px #76421e;
+        border: 4px solid #744426;
+
+    }
+
+    .main-targets:hover .main-targets-labels{ filter: blur(3.5px); }
+
+    .main-targets .main-targets-labels:hover {
+        cursor: pointer;
+        box-shadow: 7px 4px 5px 3px #76421e;
+        transform: scale(1.1);
+        filter: blur(0);
+    }
+
+    .main-targets-labels img{
+        height: 300px;
+        margin-top: 10px;
+        filter: drop-shadow(
+            0 0 10px rgba(0, 0, 0, .8)
+        )
+    }
+
+    .main-subtitle-bt { 
+        margin: 20px 0px 20px 0px; 
+        font-family: "Atma", system-ui;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 70px;
+        color: rgb(187, 110, 63);
+        text-shadow: 3.5px 3.5px #5e3518; 
+        -webkit-text-stroke-width: 1.8px;
+        -webkit-text-stroke-color: #744426;
+    }
+/*#endregion */
+
+#calculator_section {
+    display: none;
+}
+
+    /*#region Seccion de resistencia */
+    #resistences_section_elements {
+        margin: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "calculate value"
+            "colors colors";
+        gap: 20px 40px;
+        
+    }
+
+    .res-calculate-eq, .res-value-colors, .res-color {
+        background: rgba(180, 105, 58, .55);
+        backdrop-filter: blur(6px);
+        border: 4px solid #744426;
+        border-radius: 10px;
+        position: relative;
+    }
+        /*#region Calcular resistencia equivalente */
+        .res-calculate-eq {
+            grid-area: calculate;
+            padding: 15px 40px 20px 40px;
+        }
+
+            .bttChoices {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .res-calculate-typecircuit {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .res-sr { 
+                position: relative;
+                max-width: 372px;
+            }
+
+            .res-pl { 
+                position: relative;
+                max-width: 372px;
+            }
+
+            #bt_resr, #bt_repl {
+                    height: 40px;
+                    width: 360px;
+                    background: rgba(180, 105, 58, 0.8);
+                    color: rgb(201, 123, 74);
+                    font-weight: 800;
+                    border: 2px solid rgba(196, 114, 63, 1);
+                    cursor: pointer;
+                    border-radius: 20px;
+                    transition: 0.3s;
+                    position: relative;
+                    right: 10;
+                    font-family: "Chewy", system-ui;
+                    font-weight: 400;  
+                    font-style: normal;
+                    font-size: 20px;
+            }
+
+            #bt_resr:hover, #bt_repl:hover {
+                background: rgba(196, 114, 63, 1);
+                box-shadow: 0 0 0 5px rgba(180, 105, 58, 0.8);
+                color: rgb(209, 149, 111);
+            }
+
+            #resist_sr, #resist_pl { 
+                margin-top: 5px;
+                text-align: center;
+                position: relative;
+                right: 14px; 
+            }
+        /*#endregion */
+
+        /*#region Calcular valor de resistencia por color */
+        .res-value-colors {
+            grid-area: value;
+            padding: 15px 40px 20px 40px;
+        }
+        
+            .res-colors-inputs {
+                position: relative;
+            }    
+
+            input{
+                padding: 0.8em;
+                outline: none;
+                background: rgba(190, 108, 56, 0.4);
+                border: none;
+                border-radius: 12px;
+                box-shadow: 0 0 0 4px rgba(236, 128, 61, .25);
+                transition: .4s;
+                width: 340px;
+                color: rgb(201, 123, 74);
+                font-family: "Chewy", system-ui;
+                font-weight: 300;
+                font-style: normal;
+                font-size: 18px;
+            }
+
+            input::placeholder {
+                color: rgb(201, 123, 74, .55);
+            }
+            
+            input:hover {
+                box-shadow: 0 0 0 4px rgba(196, 114, 63, .65);
+            }
+
+            input:focus {
+                box-shadow: 0 0 0 4px rgba(196, 114, 63, 1);
+            }
+
+            input:valid {
+                box-shadow: 0 0 0 4px rgba(196, 114, 63, .65);            
+            }
+
+            #bt_resist_vl {
+                height: 40px;
+                width: 315px;
+                background: rgba(180, 105, 58, 0.8);
+                color: rgb(201, 123, 74);
+                font-weight: 800;
+                border: 2px solid rgba(196, 114, 63, 1);
+                cursor: pointer;
+                border-radius: 20px;
+                transition: 0.3s;
+                position: relative;
+                left: 12;
+                font-family: "Chewy", system-ui;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 20px;
+            }
+
+            #bt_resist_vl:hover {
+                background-color: rgba(196, 114, 63, 1);
+                box-shadow: 0 0 0 5px rgba(180, 105, 58, 0.8);
+                color: rgb(209, 149, 111);
+            }
+
+            #resistence_for_colors {
+                display: flex;
+                justify-content: space-around;
+                position: relative;
+            }
+
+            #resistor_image img {
+                transform: rotate(338deg);
+                width: 230px;
+                height: 550px;
+                filter: drop-shadow(-7px 0 10px rgba(209, 149, 111, 0.8));
+                margin-left: 24px;
+            }
+
+            .colors-rectangles { position: absolute; }
+
+            #rectangle_1 {
+                background-color: yellow;
+                width: 120px;
+                height: 20px;
+                transform: rotate(338deg);
+                top: 181px;
+                right: 126px;
+                border-radius: 0 0 5px 5px;
+            }
+
+            #rectangle_2 {
+                background-color: red;
+                width: 110px;
+                height: 20px;
+                transform: rotate(338deg);
+                top: 232px;
+                right: 110px;
+                border-radius: 0 0 5px 5px;
+            }
+
+            #rectangle_3 {
+                background-color: orange;
+                width: 110px;
+                height: 20px;
+                transform: rotate(338deg);
+                top: 284px;
+                right: 88px;
+                border-radius: 0 0 5px 5px;
+            }
+
+            #rectangle_4 {
+                background-color: purple;
+                width: 125px;
+                height: 20px;
+                transform: rotate(338deg);
+                top: 336px;
+                right: 60px;
+                border-radius: 5px;
+            }
+
+
+
+
+        /*#endregion */
+
+        /*#region Calcular colores de la resistencia por valor */
+        .res-color {
+            grid-area: colors;
+        }
+        /*#endregion */
+
+    /*#endregion */
+
+    /*#region Seccion de corriente */
+        #current_section_elements {
+            margin: 40px;
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            grid-template-areas: 
+                "series paralel";
+            column-gap: 40px;
+        }
+
+        #current_series, #current_paralel {
+            background: rgba(180, 105, 58, .55);
+            backdrop-filter: blur(6px);
+            border: 4px solid #744426;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        /*#region Calcular corriente en serie*/
+        #current_series {
+            grid-area: series;
+            padding: 15px 40px 20px 40px;
+        }
+        /*#endregion */
+
+        /*#region Calcular corriente en paralelo*/
+        #current_paralel {
+            grid-area: paralel;
+            padding: 15px 40px 20px 40px;
+        }
+        /*#enderegion*/
+    /*#endregion */
+
+@media (max-width: 1540px) {
+    .title {size: 25%}
+    .targets {transform: scale(0.8);}
+}
+
+@media (max-width: 1240px) {
+    .targets {flex-direction: column;}
+}

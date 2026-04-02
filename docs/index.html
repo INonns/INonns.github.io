@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title> Circuitos  </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./stylesheet.css">
+        <link rel="icon" type="png" href="./assets/icon.png">
+    </head>
+
+    <body>
+
+        <div id="fondo-fijo"></div>
+
+        <section id="main_section"> <!-- Seccion principal -->
+            <h1 id="main_title"> ¿Qué deseas calcular? </h1>
+
+            <div class="main-targets">
+
+                <button id="resist_section_bt" class="main-buttons-tg"></button> <!-- Boton para la seccion de resistencia -->
+                <label class="main-targets-labels" for="resist_section_bt">
+                    <img src="./assets/resistences.ch.png" alt="Resistencia">
+                    <p class="main-subtitle-bt"> Resistencia </p>
+                </label>
+
+                <button id="curr_section_bt" class="main-buttons-tg"> </button> <!-- Boton para la seccion de corriente-->
+                <label class="main-targets-labels" for="curr_section_bt">
+                    <img src="./assets/current.ch.png" alt="Corriente">
+                    <p class="main-subtitle-bt"> Corriente </p>
+                </label>
+
+                <button id="volt_section_bt" class="main-buttons-tg"></button> <!-- Boton para la seccion de voltaje -->
+                <label class="main-targets-labels" for="volt_section_bt">
+                    <img src="./assets/voltage.ch.png" alt="Voltaje">
+                    <p class="main-subtitle-bt"> Voltaje </p>
+                </label>
+
+            </div>
+        </section>
+       
+        <section id="calculator_section">  <!-- Seccion de calculadora temporal -->
+
+            <section id="resistences_section"> <!-- Secion de reistencias-->
+                <h2> Resistencias </h2> 
+
+                <span id="resistences_section_elements">
+
+                    <span class="res-calculate-eq"> <!-- Calcular resistencia equivalente -->
+                        <h3> Calcular Resistencia Equivalente</h3> 
+                            <div class="res-calculate-typecircuit">
+
+                                <div class="res-sr" id="res_series"> 
+                                    <p>Para circuito en serie: </p> <!-- Generado con JS -->
+                                </div>
+                                <div class="res-pl" id="res_paralel"> 
+                                    <p>Para circuito en paralelo: </p> <!-- Generado con JS -->
+                                </div>
+                                
+                            </div>    
+                    </span>
+                    
+                    <span class="res-value-colors"> <!-- Calcular valor de la resistencia por codigo de colores-->
+                        <h3> Calcular el valor por colores </h3>
+
+                        <div id="resistence_for_colors">
+                            <div class="res-colors-inputs">
+                                <div class="input-label">
+                                <p> El primer color de la resistencia es: </p>
+                                <input type="text" name="color_1" id="in_c1" class="text-color" autocomplete="off" required="" placeholder="Color (1)">
+                                <label for="in_c1"> </label> <br> <br>
+                                </div>    
+                                
+                                <div class="input-label">
+                                <p> El segundo color de la resistencia es: </p>
+                                <input type="text" name="color_2" id="in_c2" class="text-color" autocomplete="off" required="" placeholder="Color (2)"> 
+                                <label for="in_c2"> </label> <br> <br>
+                                </div>
+                                
+                                <div class="input-label">
+                                <p> El tercer color de la resistencia es: </p>
+                                <input type="text" name="color_3" id="in_c3" class="text-color" autocomplete="off" required="" placeholder="Color (3)"> 
+                                <label for="in_c3"> </label> <br> <br>
+                                </div>
+                                
+                                <div class="input-label">
+                                <p> El ultimo color, por defecto dorado: </p>
+                                <input type="text" name="color_3" id="in_c4" class="text-color" autocomplete="off" required="" placeholder="Color (4)"> 
+                                <label for="in_c4"> </label> <br> <br>
+                                </div> 
+
+                                <button id="bt_resist_vl"> Calcular Valor de la Resistencia </button>
+                                <p id="resistence_value"></p>
+                            </div>  
+
+                            <div id="resistor_image">
+                                <img src="assets/resistor.png" alt="resistor">
+                            </div>
+
+                            <div id="rectangle_1" class="colors-rectangles"></div>
+                            <div id="rectangle_2" class="colors-rectangles"></div>
+                            <div id="rectangle_3" class="colors-rectangles"></div>
+                            <div id="rectangle_4" class="colors-rectangles"></div>
+                        </div>    
+                    </span>
+
+                    <span class="res-color">
+                        <h3> Mostrar colores de la resistencia por valores </h3>
+                    </span>
+
+                </span>
+            </section>
+
+            <section id="currents_section">  <!-- Seccion de las corrientes -->
+                <h2> Corrientes </h2>
+
+                <div id="current_section_elements">
+                    
+                    <div id="current_series"> <!-- Calcular una corriente total en circuito en serie -->
+                        <h3> Para un circuito en serie</h3>
+                            <label for="in_voltage_curr"> El valor del voltage = </label>
+                            <input type="text" name="voltages" id="in_voltage_curr" placeholder="Ingresa el valor"> <br> <br>
+                            <label for="in_resistence_curr"> El valor de la resistencia = </label>
+                            <input type="text" name="resist" id="in_resistence_curr" placeholder="Ingresa el valor"> <br> <br>
+                        <button id="bt_current"> Calcular Corriente </button>
+                        <p id="current_sr"></p>
+                    </div>
+
+                    <div id="current_paralel"> <!-- Calcular varias corrientes por un circuito en paralelo-->
+                        <h3> Para un circuito en paralelo</h3> <!-- Generado con JS -->
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="voltages_section"> <!-- Seccion de calcular voltajes -->
+                <h2> Voltajes </h2>
+
+                    <div id="voltage_series"> <!-- Calcular un voltaje total en circuito en serie -->
+                        <h3> Calcular voltage de un circuito en serie</h3>
+
+                        <label for="in_current_volt"> El valor de la corriente = </label>
+                        <input type="text" name="currents" id="in_current_volt" placeholder="Ingresa el valor"> <br> <br>
+                        <label for="in_resistence_volt"> El valor de la resistencia = </label>
+                        <input type="text" name="resist" id="in_resistence_volt" placeholder="Ingresa el valor"> <br> <br>
+
+                        <button id="bt_voltage"> Calcular Voltaje </button>
+                        <p id="voltage_sr"></p>
+                    </div>
+
+                    <div id="voltage_paralel">
+                        <h3> Cacular los voltajes de un circuito en paralelo</h3> <!-- Calcular varias corrientes por un circuito en paralelo-->
+                    </div>
+                
+            </section>
+
+        </section>
+
+        <script src="./js/code.js"> </script>
+    </body>
+</html>
